@@ -1,0 +1,16 @@
+{
+  "name": "automationchallenge",
+  "version": "1.0.0",
+  "description": "AutomationChallenge program",
+  "main": "AutoChallenge.js",
+  "scripts": {
+    "test": "wdio"
+  },
+  "author": "Zac Batog",
+  "license": "ISC",
+  "devDependencies": {
+    "wdio-dot-reporter": "0.0.9",
+    "wdio-mocha-framework": "^0.5.11",
+    "wdio-selenium-standalone-service": "0.0.9"
+  }
+}
