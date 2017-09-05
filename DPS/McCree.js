@@ -1,9 +1,11 @@
 var webdriverio = require('webdriverio');
 
-function elimDeath() {
+function elimDeath(mode) {
     var elimsPerDeath;
 
-    elimsPerDeath = browser.element('id="overwatch.guid.0x08600000000003D2"').element('guid="0x02E0000000000042"').getText('class="description"');
+    elimsPerDeath = browser.element(mode).element('#overwatch.guid.0x08600000000003D2').element('guid="0x02E0000000000042"').getText('class="description"');
+
+    console.log(elimsPerDeath);
 
     return elimsPerDeath;
 };
@@ -17,7 +19,7 @@ describe('Get McCree Stats', function () {
 
         var stats[];
 
-        stats[0] = elimDeath();
+        stats[0] = elimDeath("'#quickplay'");
     });
 
     it('Quickplay', function () {
@@ -25,7 +27,7 @@ describe('Get McCree Stats', function () {
 
         var stats;
 
-        stats[0] = elimDeath();
+        stats[0] = elimDeath("'#competitive'");
 
     });
 });
